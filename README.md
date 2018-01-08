@@ -1,3 +1,3 @@
 Hi Everybody!
 
-Here is my small dinamic web project.
+Here is my small dynamic web project.
