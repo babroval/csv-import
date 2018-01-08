@@ -5,10 +5,6 @@
 			http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
 			id="WebApp_ID" version="3.0">
   
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-  </welcome-file-list>
-  
   <servlet>
     <servlet-name>Menu</servlet-name>
     <jsp-file>/WEB-INF/pages/menu.jsp</jsp-file>
