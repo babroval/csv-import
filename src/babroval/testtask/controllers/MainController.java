@@ -41,7 +41,7 @@ public class MainController extends HttpServlet {
 	private static final String VIEW_USER_TABLE = "WEB-INF/pages/view.jsp";
 	private static final String VIEW_IMPORT = "WEB-INF/pages/import.jsp";
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		List<User> allUsers = new ArrayList<User>();
@@ -105,5 +105,8 @@ public class MainController extends HttpServlet {
 		rd.forward(request, response);
 
 	}
-
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 }
