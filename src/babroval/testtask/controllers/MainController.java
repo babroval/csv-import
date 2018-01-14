@@ -24,7 +24,7 @@ import babroval.testtask.utils.StringUtils;
 public class MainController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final String CSV_FILE = "/WEB-INF/users.csv";
 
 	private static final String IMPORT = "import";
@@ -51,10 +51,10 @@ public class MainController extends HttpServlet {
 
 		if (isImport) {
 			UserDAO dao = DAOFactory.getFactory(StoradgeTypes.Csv).getUserDAO();
-			
+
 			ServletContext context = getServletContext();
 			InputStream csvFilePath = context.getResourceAsStream(CSV_FILE);
-			
+
 			allUsers = dao.loadAllUsers(csvFilePath);
 
 			dao = DAOFactory.getFactory(StoradgeTypes.MySql).getUserDAO();
@@ -64,7 +64,7 @@ public class MainController extends HttpServlet {
 
 			RequestDispatcher rd = request.getRequestDispatcher(VIEW_IMPORT);
 			rd.forward(request, response);
-            return;
+			return;
 		}
 
 		String temp = request.getParameter(PAGE_NUM);
@@ -80,12 +80,11 @@ public class MainController extends HttpServlet {
 		allUsers = dao.loadAllUsers(sort);
 
 		Integer i = usersCount * pageNumber - usersCount;
-		
+
 		do {
 			users.add(allUsers.get(i));
 			i++;
 		} while (i < usersCount * pageNumber && i < allUsers.size());
-		
 
 		Integer pagesQuantity = allUsers.size() / usersCount;
 		if (allUsers.size() % usersCount != 0) {
@@ -105,8 +104,9 @@ public class MainController extends HttpServlet {
 		rd.forward(request, response);
 
 	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 }
