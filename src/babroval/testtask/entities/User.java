@@ -14,7 +14,6 @@ public class User implements Serializable {
 	private String tel;
 
 	public User() {
-		super();
 	}
 
 	public Integer getId() {
