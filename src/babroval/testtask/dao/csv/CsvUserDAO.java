@@ -16,15 +16,13 @@ public class CsvUserDAO implements UserDAO {
 	@Override
 	public List<User> loadAllUsers(InputStream csvFile) {
 
-		BufferedReader br = null;
 		String line = "";
 		String cvsSplitBy = ",";
 
-		try {
+		try (BufferedReader br = new BufferedReader(new InputStreamReader(csvFile))) {
 
 			List<User> allUsers = new ArrayList<User>();
 
-			br = new BufferedReader(new InputStreamReader(csvFile));
 			while ((line = br.readLine()) != null) {
 
 				String[] csvLine = line.split(cvsSplitBy);
@@ -34,18 +32,8 @@ public class CsvUserDAO implements UserDAO {
 			}
 			return allUsers;
 
-		} catch (FileNotFoundException e) {
-			throw new RuntimeException(e);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
-		} finally {
-			if (br != null) {
-				try {
-					br.close();
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-				}
-			}
 		}
 
 	}
