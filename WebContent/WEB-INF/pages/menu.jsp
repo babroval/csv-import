@@ -20,5 +20,8 @@ body {
 	</p>
 	<p>
 		<a href="import.htm">Import</a>
+
 	</p>
+
+</body>
 </html>
