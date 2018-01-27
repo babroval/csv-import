@@ -1,6 +1,6 @@
 package babroval.testtask.dao.mysql;
 
-import java.io.InputStream;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -122,7 +122,7 @@ public class MySqlUserDAO implements UserDAO {
 	}
 
 	@Override
-	public List<User> loadAllUsers(InputStream csvFile) {
+	public List<User> loadAllUsers(File csvFile) {
 		throw new UnsupportedOperationException();
 	}
 

@@ -1,6 +1,6 @@
 package babroval.testtask.dao;
 
-import java.io.InputStream;
+import java.io.File;
 import java.util.List;
 
 import babroval.testtask.entities.User;
@@ -11,7 +11,7 @@ public interface UserDAO {
 
 	void updateUser(User user);
 	
-	List<User> loadAllUsers(InputStream csvFile);
+	List<User> loadAllUsers(File csvFile);
 
 	void storeUsers(List<User> users);
 

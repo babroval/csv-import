@@ -1,7 +1,7 @@
 package babroval.testtask.controllers;
 
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,9 +53,10 @@ public class MainController extends HttpServlet {
 			UserDAO dao = DAOFactory.getFactory(StoradgeTypes.Csv).getUserDAO();
 
 			ServletContext context = getServletContext();
-			InputStream csvFilePath = context.getResourceAsStream(CSV_FILE);
-
-			allUsers = dao.loadAllUsers(csvFilePath);
+			
+			String path = context.getRealPath(CSV_FILE);
+			File csvFile = new File(path);
+			allUsers = dao.loadAllUsers(csvFile);
 
 			dao = DAOFactory.getFactory(StoradgeTypes.MySql).getUserDAO();
 			dao.storeUsers(allUsers);
