@@ -16,7 +16,7 @@
      
         <h2>${info}</h2>
        
-		<form action="MainController" method="post">
+		<form action="main.htm" method="post">
 		     <input type="submit" name="import" value="Import from CSV file">
 		</form>
    

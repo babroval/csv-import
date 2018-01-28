@@ -20,7 +20,7 @@
 
 	<h1>Users Table</h1>
 
-		<form action="MainController" method="post">
+		<form action="main.htm" method="post">
 			<p>
 			<b>Number Users on Page :</b>
 			<select id="numUsers" name="numUsers" onchange="select()">

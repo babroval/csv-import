@@ -16,7 +16,7 @@ body {
 
 	<h1>CSV Project Menu</h1>
 	<p>
-		<a href="MainController">Users List</a>
+		<a href="main.htm">Users List</a>
 	</p>
 	<p>
 		<a href="import.htm">Import</a>

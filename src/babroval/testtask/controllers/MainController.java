@@ -20,7 +20,7 @@ import babroval.testtask.entities.User;
 import babroval.testtask.utils.RequestUtils;
 import babroval.testtask.utils.StringUtils;
 
-@WebServlet("/MainController")
+@WebServlet("/main.htm")
 public class MainController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
