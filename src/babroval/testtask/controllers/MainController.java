@@ -61,7 +61,7 @@ public class MainController extends HttpServlet {
 			dao = DAOFactory.getFactory(StoradgeTypes.MySql).getUserDAO();
 			dao.storeUsers(allUsers);
 
-			request.setAttribute("info", "CSV file sucssesful imported to MySql data base");
+			request.setAttribute("info", "CSV file sucssesful imported to MySql database");
 
 			RequestDispatcher rd = request.getRequestDispatcher(VIEW_IMPORT);
 			rd.forward(request, response);

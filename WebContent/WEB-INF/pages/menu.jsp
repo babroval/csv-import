@@ -19,7 +19,7 @@ body {
 		<a href="main.htm">Users List</a>
 	</p>
 	<p>
-		<a href="import.htm">Import</a>
+		<a href="import.htm">Import CSV file to MySql database</a>
 
 	</p>
 
