@@ -6,7 +6,6 @@ import babroval.testtask.dao.mysql.MySqlUserDAO;
 public class MySqlDAOFactory extends DAOFactory {
 
 	public MySqlDAOFactory() {
-		super();
 	}
 
 	@Override

@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 public final class RequestUtils {
 
 	private RequestUtils() {
-		super();
 	}
 
 	public static boolean isParameterNotExist(HttpServletRequest request, String paramName) {

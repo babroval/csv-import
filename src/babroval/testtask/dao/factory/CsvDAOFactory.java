@@ -6,7 +6,6 @@ import babroval.testtask.dao.csv.CsvUserDAO;
 public class CsvDAOFactory extends DAOFactory {
 
 	public CsvDAOFactory() {
-		super();
 	}
 
 	@Override

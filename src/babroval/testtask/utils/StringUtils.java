@@ -5,7 +5,6 @@ public final class StringUtils {
 	public static final String EMPTY_STR = "";
 
 	public StringUtils() {
-		super();
 	}
 
 	public static boolean isEmpty(String str) {
