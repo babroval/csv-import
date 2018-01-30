@@ -10,15 +10,17 @@ public abstract class DAOFactory {
 		return getFactory(StoradgeTypes.MySql);
 	}
 
+	
 	public static DAOFactory getFactory(StoradgeTypes type) {
+		
 		switch (type) {
-		case MySql: {
-			return new MySqlDAOFactory();
+			case MySql: {
+				return new MySqlDAOFactory();
+			}
+			case Csv: {
+				return new CsvDAOFactory();
+			}
 		}
-		case Csv: {
-			return new CsvDAOFactory();
-		}
-		}
-		throw new RuntimeException();
+		throw new RuntimeException("Couldn't create DAOFactory: " + type);
 	}
 }
