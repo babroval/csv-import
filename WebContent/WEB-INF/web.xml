@@ -21,7 +21,7 @@
   
   <error-page>
     <exception-type>java.lang.Throwable</exception-type>
-    <location>/ExceptionController</location>
+    <location>/exception.htm</location>
   </error-page>
   
 </web-app>
