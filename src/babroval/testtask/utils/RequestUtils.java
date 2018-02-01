@@ -13,7 +13,7 @@ public final class RequestUtils {
 
 	public static boolean isParameterExist(HttpServletRequest request, String paramName) {
 		if (StringUtils.isBlank(paramName)) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Request parameter is blank");
 		}
 
 		String value = request.getParameter(paramName);

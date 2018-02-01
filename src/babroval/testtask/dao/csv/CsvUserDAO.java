@@ -61,22 +61,22 @@ public class CsvUserDAO implements UserDAO {
 
 	@Override
 	public User storeUser(User user) {
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException("Method has not implemented yet");
 	}
 
 	@Override
 	public void updateUser(User user) {
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException("Method has not implemented yet");
 	}
 
 	@Override
 	public void storeUsers(List<User> users) {
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException("Method has not implemented yet");
 	}
 
 	@Override
 	public List<User> loadAllUsers(String sort) {
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException("Method has not implemented yet");
 	}
 
 }

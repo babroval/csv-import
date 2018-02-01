@@ -123,7 +123,7 @@ public class MySqlUserDAO implements UserDAO {
 
 	@Override
 	public List<User> loadAllUsers(File csvFile) {
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException("Method has not implemented yet");
 	}
 
 }
