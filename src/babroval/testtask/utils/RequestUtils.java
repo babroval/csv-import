@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 public final class RequestUtils {
 
 	private RequestUtils() {
+		throw new AssertionError("Class contains static methods only. You should not instantiate it!");
 	}
 
 	public static boolean isParameterNotExist(HttpServletRequest request, String paramName) {
