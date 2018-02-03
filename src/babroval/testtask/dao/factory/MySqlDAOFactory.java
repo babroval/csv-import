@@ -5,9 +5,6 @@ import babroval.testtask.dao.mysql.MySqlUserDAO;
 
 public class MySqlDAOFactory extends DAOFactory {
 
-	public MySqlDAOFactory() {
-	}
-
 	@Override
 	public UserDAO getUserDAO() {
 		return new MySqlUserDAO();
