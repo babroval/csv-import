@@ -116,6 +116,10 @@ public class MySqlUserDAO implements UserDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
+		
+		if (result.isEmpty()) {
+			throw new RuntimeException("database table is empty");
+		}
 
 		return result;
 
