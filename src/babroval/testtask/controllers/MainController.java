@@ -29,11 +29,11 @@ public class MainController extends HttpServlet {
 
 	private static final String IMPORT = "import";
 
-	private static final String PAGE_NUM = "number";
-	public static final String DEFAULT_PAGE_NUM = "1";
+	private static final String NUM_OF_PAGE = "number";
+	public static final String DEFAULT_NUM_OF_PAGE = "1";
 
-	private static final String NUM_USERS_FOR_PAGE = "numUsers";
-	public static final String DEFAULT_NUM_USERS = "2";
+	private static final String AMOUNT_USERS_PER_PAGE = "numUsers";
+	public static final String DEFAULT_AMOUNT_USERS_PER_PAGE = "2";
 
 	private static final String SORT = "sort";
 	public static final String DEFAULT_SORT = "surname";
@@ -45,7 +45,7 @@ public class MainController extends HttpServlet {
 			throws ServletException, IOException {
 
 		List<User> allUsers = new ArrayList<User>();
-		List<User> users = new ArrayList<User>();
+		List<User> usersOnPage = new ArrayList<User>();
 
 		Boolean isImport = RequestUtils.isParameterExist(request, IMPORT);
 
@@ -53,7 +53,7 @@ public class MainController extends HttpServlet {
 			UserDAO dao = DAOFactory.getFactory(StoradgeTypes.Csv).getUserDAO();
 
 			ServletContext context = getServletContext();
-			
+
 			String path = context.getRealPath(CSV_FILE);
 			File csvFile = new File(path);
 			allUsers = dao.loadAllUsers(csvFile);
@@ -68,11 +68,11 @@ public class MainController extends HttpServlet {
 			return;
 		}
 
-		String temp = request.getParameter(PAGE_NUM);
-		Integer pageNumber = StringUtils.getIntegerOrDefaultParam(temp, DEFAULT_PAGE_NUM);
+		String temp = request.getParameter(NUM_OF_PAGE);
+		Integer numberOfPage = StringUtils.getIntegerOrDefaultParam(temp, DEFAULT_NUM_OF_PAGE);
 
-		temp = request.getParameter(NUM_USERS_FOR_PAGE);
-		Integer usersCount = StringUtils.getIntegerOrDefaultParam(temp, DEFAULT_NUM_USERS);
+		temp = request.getParameter(AMOUNT_USERS_PER_PAGE);
+		Integer amountUsersPerPage = StringUtils.getIntegerOrDefaultParam(temp, DEFAULT_AMOUNT_USERS_PER_PAGE);
 
 		temp = request.getParameter(SORT);
 		String sort = StringUtils.getStringOrDefaultParam(temp, DEFAULT_SORT);
@@ -80,27 +80,28 @@ public class MainController extends HttpServlet {
 		UserDAO dao = DAOFactory.getFactory(StoradgeTypes.MySql).getUserDAO();
 		allUsers = dao.loadAllUsers(sort);
 
-		Integer i = usersCount * pageNumber - usersCount;
-
-		do {
-			users.add(allUsers.get(i));
-			i++;
-		} while (i < usersCount * pageNumber && i < allUsers.size());
-
-		Integer pagesQuantity = allUsers.size() / usersCount;
-		if (allUsers.size() % usersCount != 0) {
-			pagesQuantity++;
+		// Define amount of all pages
+		Integer amountOfAllPages = allUsers.size() / amountUsersPerPage;
+		if (allUsers.size() % amountUsersPerPage != 0) {
+			amountOfAllPages++;
 		}
 
-		Integer pageCount[] = new Integer[pagesQuantity];
-		for (i = 0; i < pageCount.length; i++) {
-			pageCount[i] = i + 1;
+		// Attach numbers to all pages
+		Integer numbersOfPages[] = new Integer[amountOfAllPages];
+		for (int i = 0; i < numbersOfPages.length; i++) {
+			numbersOfPages[i] = i + 1;
 		}
 
-		request.setAttribute("usersCount", usersCount);
-		request.setAttribute("pageCount", pageCount);
+		// Define users on page
+		Integer indexOfFirstElementOnPage = amountUsersPerPage * (numberOfPage - 1);
+		for (int i = indexOfFirstElementOnPage; i < allUsers.size() && i < amountUsersPerPage * numberOfPage; i++) {
+			usersOnPage.add(allUsers.get(i));
+		}
+
+		request.setAttribute("usersCount", amountUsersPerPage);
+		request.setAttribute("pageCount", numbersOfPages);
 		request.setAttribute("sort", sort);
-		request.setAttribute("users", users);
+		request.setAttribute("users", usersOnPage);
 		RequestDispatcher rd = request.getRequestDispatcher(VIEW_USER_TABLE);
 		rd.forward(request, response);
 
