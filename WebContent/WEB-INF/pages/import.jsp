@@ -7,15 +7,12 @@
 <title>CSV - import</title>
 <style>
 	body {font-family: Arial; text-align: center;}
-	h2 {color: grey;}
 </style>
 </head>
 <body>
 	 
 		<h1>CSV Project Import</h1>
      
-        <h2>${info}</h2>
-       
 		<form action="main.htm" method="post">
 		     <input type="submit" name="import" value="Import from CSV file">
 		</form>

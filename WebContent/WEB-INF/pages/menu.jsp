@@ -6,21 +6,17 @@
 
 <title>CSV - menu</title>
 <style>
-body {
-	font-family: Arial;
-	text-align: center;
-}
+	body {font-family: Arial;text-align: center;}
 </style>
 </head>
 <body>
 
 	<h1>CSV Project Menu</h1>
 	<p>
-		<a href="main.htm">Users List</a>
+	    <a href="import.htm">Import CSV file to database</a>
 	</p>
 	<p>
-		<a href="import.htm">Import CSV file to MySql database</a>
-
+		<a href="main.htm">Show users in database</a>
 	</p>
 
 </body>

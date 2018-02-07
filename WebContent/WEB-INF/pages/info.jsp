@@ -6,17 +6,18 @@
 
 <title>CSV - exception</title>
 <style>
-body {
-	font-family: Arial;
-	text-align: center;
-}
+	body {font-family: Arial; text-align: center;}
+	h2 {color: green;}
+	h4 {color: red;}
 </style>
 </head>
 <body>
 
-	<h1>CSV Project Exception</h1>
+	<h1>CSV Project Information</h1>
 	
-	<h2 style="color:red">${error}</h2> 
+	<h2>${info}</h2>
+	
+	<h4>${error}</h4> 
 
     <p><a href="menu.htm">Back to Menu</a></p>
 	

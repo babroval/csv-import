@@ -14,7 +14,7 @@ public class ExceptionController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String VIEW_EXCEPTION = "WEB-INF/pages/exception.jsp";
+	private static final String VIEW_INFO = "WEB-INF/pages/info.jsp";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -23,7 +23,7 @@ public class ExceptionController extends HttpServlet {
 
 		request.setAttribute("error", throwable.getMessage());
 
-		RequestDispatcher rd = request.getRequestDispatcher(VIEW_EXCEPTION);
+		RequestDispatcher rd = request.getRequestDispatcher(VIEW_INFO);
 		rd.forward(request, response);
 		return;
 	}

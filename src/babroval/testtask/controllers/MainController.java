@@ -39,7 +39,7 @@ public class MainController extends HttpServlet {
 	public static final String DEFAULT_SORT = "surname";
 
 	private static final String VIEW_USER_TABLE = "WEB-INF/pages/view.jsp";
-	private static final String VIEW_IMPORT = "WEB-INF/pages/import.jsp";
+	private static final String VIEW_INFO = "WEB-INF/pages/info.jsp";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -61,9 +61,9 @@ public class MainController extends HttpServlet {
 			dao = DAOFactory.getFactory(StoradgeTypes.MySql).getUserDAO();
 			dao.storeUsers(allUsers);
 
-			request.setAttribute("info", "CSV file sucssesful imported to MySql database");
+			request.setAttribute("info", "CSV file successfully imported into database");
 
-			RequestDispatcher rd = request.getRequestDispatcher(VIEW_IMPORT);
+			RequestDispatcher rd = request.getRequestDispatcher(VIEW_INFO);
 			rd.forward(request, response);
 			return;
 		}
