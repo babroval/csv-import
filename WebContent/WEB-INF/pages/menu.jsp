@@ -13,10 +13,10 @@
 
 	<h1>CSV Project Menu</h1>
 	<p>
-	    <a href="import.htm">Import CSV file to database</a>
+	    <a href="import.htm">Import CSV file into database</a>
 	</p>
 	<p>
-		<a href="main.htm">Show users in database</a>
+		<a href="main.htm">Read imported data from database</a>
 	</p>
 
 </body>
