@@ -2,9 +2,7 @@
 
 CSV Import
 ==========
-
-A small Java web dynamic project
-for import CSV file into database. 
+A small Java web dynamic project for import CSV file into database. 
 
 [![Build Status](https://travis-ci.org/babroval/csv-import.svg?branch=master)](https://travis-ci.org/babroval/csv-import)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/babroval/csv-import/blob/master/LICENSE)
@@ -25,40 +23,37 @@ for import CSV file into database.
 
 Table of Contents
 -----------------
-
   * [Requirements](#requirements)
   * [Usage](#usage)
   * [Contributing](#contributing)
-  * [License](#license)
+  * [License](#license)  
 
 
 Requirements
 ------------
-
 CSV Import requires the following to run:
   * [JRE][jre] 8
   * [Apache Tomcat Server][tomcat] 
-  * [MySQL Community Server][mysql] 
+  * [MySQL Community Server][mysql]  
 
 
 Usage
 -----
-
-CSV Import is easiest to use with [Eclipse IDE][eclipse]:
+CSV Import is easiest to use with [Eclipse IDE][eclipse]:  
 File -> Import -> Git -> Projects From Git > URI
 
-### Error handling
-
-All exceptions are converted into unchecked type and 
+#### Error handling
+All exceptions are converted into unchecked type and  
 intercepted by servlet to keep code clean as possible.
-
+<br/>
+<br/>
 
 Contributing
 ------------
-
-To contribute to CSV Import, clone this repo locally and
+To contribute to CSV Import, clone this repo locally and  
 commit your code on a separate branch.
-
+<br/>
+<br/>
 
 License
 -------
